@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--- to convert html to pdf -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <!-- Bootstrap CSS -->
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+    <style>
+        .Content {
+    height: 100vh;
+    overflow-x: hidden;
+   /* margin: 0em; */
+   overflow-y: scroll;
+   width:120%;
+
+}
+   
+    </style>
+<body onload="myFunction()">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script> 
+    <script type="text/javascript">
+
+    if (localStorage.getItem('crossorigin_flag')==='false'){
+                Toastify({
+                    text: "Time to load the video depends upon internet speed and video length. User can not download images but can capture notes in this mode of video watching",
+                    duration: 8000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "left", // `left`, `center` or `right`
+                    backgroundColor: "#008000",
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    onClick: function() {} // Callback after click
+                }).showToast();
+    } else {
+                        Toastify({
+                    text: "Time to load the video depends upon internet speed and video length. In mean time, explore existing 'Voice commands' tab. If loading time is really too long then user may watch the same video in 'watch video' mode ",
+                    duration: 15000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "left", // `left`, `center` or `right`
+                    backgroundColor: "#008000",
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    onClick: function() {} // Callback after click
+                }).showToast();
+    }                        
+
+    </script>
+
+
+    <nav class="navbar navbar-expand-lg " style="background-color: violet; color: black;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">mink.ai</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+       
+
+        <li class="nav-item">
+
+
+          <!-- Example split danger button -->
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">Contact</button>
+  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="feedbackformink@gmail.com">Action</a>
+    </li>
+    
+  </ul>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-danger">voice command</button>
+  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+  </button>
+  <ul class="dropdown-menu">
+    <a class="dropdown-item" href="#">Play</a>
+                        <a class="dropdown-item" href="#">Stop/Wait</a>
+                        <a class="dropdown-item" href="#">Continue/Resume</a>
+                        <a class="dropdown-item" href="#">Picture/Photo</a>
+                        <a class="dropdown-item" href="#">Add comment</a>
+                        <a class="dropdown-item" href="#">Add query</a>
+                        <a class="dropdown-item" href="#">To exit comment or query,say 'Over'</a>
+                        <a class="dropdown-item" href="#">==Speed control==</a>
+                        <a class="dropdown-item" href="#">Slow speed</a>
+                        <a class="dropdown-item" href="#">Normal/default speed</a>
+                        <a class="dropdown-item" href="#">Fast speed</a>
+                        <a class="dropdown-item" href="#">Faster speed</a>
+                        <a class="dropdown-item" href="#">==Sound control==</a>
+                        <a class="dropdown-item" href="#">Reduce the volume</a>
+                        <a class="dropdown-item" href="#">Increase the volume</a> 
+                        <a class="dropdown-item" href="#">Maximize the volume</a>              
+                        <a class="dropdown-item" href="#">Mute/silent the audio</a>
+                        <a class="dropdown-item" href="#">Unmute</a>
+                        <a class="dropdown-item" href="#">==Skip video==</a>
+                        <a class="dropdown-item" href="#">Skip</a>
+                        <a class="dropdown-item" href="#">Go back</a>
+                        <a class="dropdown-item" href="#">Skip options: Queen,King</a>
+                        <a class="dropdown-item" href="#">Rewind options: Silver,Gold</a>
+                        <a class="dropdown-item" href="#">Restart</a>
+                        <a class="dropdown-item" href="#">Send email</a>
+                        <a class="dropdown-item" href="#">Download notes</a>  
+                        <a class="dropdown-item" href="#">==Manual Mode==</a>
+                        <a class="dropdown-item" href="#">Switch off the microphone</a>
+</div>
+
+
+
+        </li>
+         <li class="nav-item btn-group">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        
+         <li class="nav-item btn-group">
+          <a class="nav-link" href="#">Logout</a>
+        </li>
+       
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12">
+                <!-- <div class="alert alert-danger alertclass" id="myalerts" role="alert" style="display: none;">
+                        Please allow mic to run voice commands. <a href="javascript:void(0)" onclick="allowmic()" ><b>click here to allow</b></a>
+                      </div> -->
+                <div class="row">
+                    <div class="col-md-12 col-12">
+                        <!--div class="row">
+                            <div class="col">
+                                <strong>Video Title: </strong><span id="video-Title" class=""></span>
+                            </div>
+                        </div-->
+                        <div class="row">
+                            <div class="col-md-12 col-12">
+
+                                <div class="d-flex bd-highlight">
+
+                                    <div class="mr-auto p-1 bd-highlight">
+                                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdnfi-QxFreGVJ_0xaWBFBhr_JOj7RPHvz7GpuIjvXfXo40Yw/formResponse" target="_blank"> => Help us improve the product, click here to take survey <= </a>                                         
+                                        <span class="badge badge-success" id="listening" style="display: none; width: 63px;margin-bottom: 0px;">listening......</span>
+                                        <p>Last voice command ==>  <span id="vUserSaid"></span></p>
+                                        <span class="badge badge-danger" id="stop" style="display: none; width: 63px;">stop..</span>
+                                    </div>
+                                    <div class="p-1 bd-highlight">
+                                        <button type="button" id="allowmic" onclick="allowmic()" class="btn btn-sm btn-primary" style="margin-bottom: 10px;display: none;margin-right: 40px;">Allow mic</button>
+                                        <button type="button" id="stopMIC" onclick="stopMic()" class="btn btn-primary btn-sm">Stop Mic</button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="mt-2">
+                            <div class="col-md-12 col-12">
+                                <video  id="videoplayer" width="70%" height="70%" controls src="media/tom.mp4" type="video/mp4"></video>
+                                <script type="text/javascript">
+                                    if (localStorage.getItem('crossorigin_flag')==='true'){
+                                        document.getElementById("videoplayer").setAttribute("crossOrigin","anonymous"); 
+                                    }
+                                </script>  
+                               <img src="media/football.jpg" width="30%" height="40%">
+                               <input type="text" name=" text"  width="30%" height="40%"  placeholder="comments"> 
+                               <input type="submit" name="submit">
+                               <br>
+                               <img src="media/rugby.jpg" width="30%" height="40%" style="padding-top:2rem ;">      
+                                <input type="text" name=" text"   width="30%" height="40%" placeholder="comments">
+                                <input type="submit" name="submit">                      
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-12 mt-3">
+                        <button type="button" id="snapshot" onclick="shoot()" class="btn btn-primary btn-sm">Take picture</button>
+                        <button type="button" id="downloadSnapshot" onclick="snapshot()" class="btn btn-primary btn-sm">Download notes</button>
+                        <button type="button" id="sendemail" onclick="sendemail()" class="btn btn-primary btn-sm">Send email</button>
+                        <script type="text/javascript">
+                            if (localStorage.getItem('crossorigin_flag')==='false'){
+                                //document.getElementById("downloadSnapshot").disabled = true;
+                               document.getElementById("sendemail").disabled = true;
+                                //document.getElementById("snapshot").disabled = true;
+                            }
+                        </script>
+                    </div>
+                </div>
+            </div>
+            <div class="col-14 col-sm-12 col-md-8">
+                <div class="row" id="screensection" style="display: none;">
+                    <div class="col-md-12 col-12 outerDivWrapper">
+                        <!--h7 class="mt-1">Video notes</h7-->
+                        <h5 id="commentlisting" style="display: none; font-size: 19px;"><i class="fa fa-circle animated" aria-hidden="true" style="color: blue;"></i> Comment mode on. Say "over" to stop adding comment.</h5>
+                        <div id="output" class="Content">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3 mt-4">
+                                <label class="form-label">First Name</label>
+                                <input type="text" id="firstname1" class="form-control" value="" placeholder="please enter your firstname">
+                                <p class="mt-2 alert-text" id="firstname-error-messages"></p>
+                            </div>
+                        </div>
+                        
+
+                        <div class="col-md-6">
+                            <label class="form-label">Skip</label>
+                            <input type="text" class="js-range-slider" name="my_range" value="" data-min="10" data-max="300" data-grid="true" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Queen(Medium skip)</label>
+                            <input type="text" class="js-range-slider3" name="my_range" value="" data-min="30" data-max="300" data-grid="true" />
+                        </div>                        
+                        <div class="col-md-6">
+                            <label class="form-label">King(Long skip)</label>
+                            <input type="text" class="js-range-slider2" name="my_range" value="" data-min="60" data-max="300" data-grid="true" />
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <label class="form-label">Go back</label>
+                            <input type="text" class="js-range-slider1" name="my_range" value="" data-min="5" data-max="300" data-grid="true" />
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Silver(Medium rewind)</label>
+                            <input type="text" class="js-range-slider4" name="my_range" value="" data-min="30" data-max="300" data-grid="true" />
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Gold(Long rewind)</label>
+                            <input type="text" class="js-range-slider5" name="my_range" value="" data-min="60" data-max="300" data-grid="true" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary" onclick="saveSetting()">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a id="dllink" style="display: none;"></a>
+    <!-- jQuery and Bootstrap Bundle -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/js/ion.rangeSlider.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js" integrity="sha512-s/XK4vYVXTGeUSv4bRPOuxSDmDlTedEpMEcAQk0t/FMd9V6ft8iXdwSBxV0eD60c6w/tjotSlKu9J2AAW1ckTA==" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/videoplayer.js"></script>
+    <script>
+        
+        window.addEventListener('beforeunload', function (e) {
+            // Chrome requires returnValue to be set
+            e.returnValue = '';
+        });
+        window.addEventListener('storage', function(event) {
+            if (event.key == 'loginflag') {
+                window.location.href = "login.html"
+            }
+        });
+        $(".js-range-slider").ionRangeSlider({
+
+            // Called right after range slider instance initialised
+
+            from: localStorage.getItem('skip'),
+            onChange: function(data) {
+                // Called every time handle position is changed
+                localStorage.setItem('skip', data.from);
+                console.log(data.from);
+            },
+        });
+
+        $(".js-range-slider1").ionRangeSlider({
+            from: localStorage.getItem('back'),
+            onChange: function(data) {
+                // Called every time handle position is changed
+                localStorage.setItem('back', data.from);
+                console.log(data.from);
+            },
+        });
+
+        $(".js-range-slider2").ionRangeSlider({
+            from: localStorage.getItem('King'),
+            onChange: function(data) {
+                // Called every time handle position is changed
+                localStorage.setItem('King', data.from);
+                console.log(data.from);
+            },
+        });
+
+        $(".js-range-slider3").ionRangeSlider({
+            from: localStorage.getItem('queen'),
+            onChange: function(data) {
+                localStorage.setItem('queen', data.from);
+                // Called every time handle position is changed
+                console.log(data.from);
+            },
+        });
+
+        $(".js-range-slider4").ionRangeSlider({
+            from: localStorage.getItem('Go1'),
+            onChange: function(data) {
+                localStorage.setItem('Go1', data.from);
+                // Called every time handle position is changed
+                console.log(data.from);
+            },
+        });
+
+        $(".js-range-slider5").ionRangeSlider({
+            from: localStorage.getItem('Go2'),
+            onChange: function(data) {
+                localStorage.setItem('Go2', data.from);
+                // Called every time handle position is changed
+                console.log(data.from);
+            },
+        });
+    </script>
+
+    <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
